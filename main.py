@@ -23,7 +23,6 @@ def run_cmd(cmd):
 
 def virus_total(domain):
     print("[+] Gathering Information from VirusTotal...")
-    #api_key = "fd386adf3978bdfca2064b643e3ffdabe15f0e19863c3d79e1ad0d5f50612385"
     api_key = os.getenv("VirusTotal_API_KEY")
     if not api_key:
         print("[!] VirusTotal API key not set in .env file (VirusTotal_API_KEY). Skipping...")
@@ -52,7 +51,6 @@ def urlscan(domain):
 
 def viewdns(domain):
     print("[+] Gathering IPs from ViewDNS.info...")
-    #apikey="376fef13a604a802f780d079927822646c312d9e"
     api_key = os.getenv("VIEWDNS_API_KEY")
     if not api_key:
         print("[!] ViewDNS API key not set in .env file (VIEWDNS_API_KEY). Skipping...")
@@ -69,7 +67,6 @@ def check_spf(domain):
 
 def security_trails(domain):
     print("[+] Gathering from SecurityTrails...")
-    #api_key = "ZeFkNUAeQ4anLCmbMug1zXMTf20XekFU"
     api_key = os.getenv("SECURITYTRAILS_API_KEY")
     if not api_key:
         print("[!] Security Trails API key not set in .env file (SecurityTrails_API_KEY). Skipping...")
