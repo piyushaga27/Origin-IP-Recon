@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-''' Troubleshooting the status codes'''
 
 import subprocess
 import threading
