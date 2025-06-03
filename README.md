@@ -43,19 +43,13 @@ git clone https://github.com/piyushaga27/Origin-IP-Recon.git
 cd Origin-IP-Recon
 ```
 
-2. **Install Python dependencies**:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. **Install external tools** (if not already):
+2. **Install external tools** (if not already):
 
 ```bash
 sudo apt install dnsrecon jq curl dnsutils
 ```
 
-4. **Install `httpx-toolkit` (by ProjectDiscovery)**:
+3. **Install `httpx-toolkit` (by ProjectDiscovery)**:
 
 ```bash
 go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
