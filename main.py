@@ -8,12 +8,30 @@ import json
 import argparse
 import os
 from dotenv import load_dotenv
+from colorama import Fore, Style, init
 
 load_dotenv()
 validIPs = []
 invalidIPs = []
 IPQueue = queue.Queue()
 lock = threading.Lock()
+
+init(autoreset=True)
+
+def print_banner():
+    banner = f"""
+{Fore.CYAN}
+                    ▞▀▖   ▗    ▗     ▜▘▛▀▖ ▛▀▖
+                    ▌ ▌▙▀▖▄ ▞▀▌▄ ▛▀▖ ▐ ▙▄▘ ▙▄▘▞▀▖▞▀▖▞▀▖▛▀▖
+                    ▌ ▌▌  ▐ ▚▄▌▐ ▌ ▌ ▐ ▌   ▌▚ ▛▀ ▌ ▖▌ ▌▌ ▌
+                    ▝▀ ▘  ▀▘▗▄▘▀▘▘ ▘ ▀▘▘   ▘ ▘▝▀▘▝▀ ▝▀ ▘ ▘
+
+{Style.RESET_ALL}
+                 🔍 {Fore.YELLOW}Origin IP Recon Tool
+            {Fore.GREEN}Developed by zeroecho - Piyush Agarwal (@piyushaga27)
+        {Fore.BLUE}https://github.com/piyushaga27/Origin-IP-Recon
+    """
+    print(banner)
 
 def run_cmd(cmd):
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
@@ -104,6 +122,7 @@ def verify_ip() :
             IPQueue.task_done()
 
 def main():
+    print_banner()
     parser = argparse.ArgumentParser(description="Recon Tool - OSINT IP Collector & Validator")
     parser.add_argument('--domain', required=True, help='Target domain')
     parser.add_argument('-t', '--threads', type=int, default=10, help='Max concurrent threads (default 10)')
